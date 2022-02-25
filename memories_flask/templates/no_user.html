@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Memories</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, inicial-scale=1">
+	<meta name="author" content="Nikola Knežević">
+	<meta name="keywords" content="Zadar, Croatia, Holiday, Memories, Apartments, odmor, sveti, petar, na, moru, hrvatska, dalmacija, dalmatia">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+    <div class="container - fluid">
+	
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                <a class="navbar-brand" href="#">Memories Apartmani</a>
+                </div>
+
+                <div class="topnav" id="myTopnav">
+                    <a href="#" class="active"> Unijeli ste krive podatke za prijavu</a>
+                </div>
+
+            </div>
+        </nav>
+        
+        <div class="col-md-4">
+            <p>Ponovno unesi podatke</p>
+
+            <div class="col-md-4">
+                <div class="signup">
+                  <form class="" action="" method="POST">
+                    <label for="name"></label>
+                      <input type="text" id="username_prijava" name="username_prijava" placeholder="korisnicko ime">
+                    <label for="username"></label>
+                      <input type="password" id="password_prijava" name="password_prijava" placeholder="password"><br><br>
+                    <input type="submit" value="Prijava" name="prijava">
+                  </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <p>Kreiraj novi racun</p>
+
+            <div class="signup">
+                <form class="" action="" method="POST">
+                  <label for="name"></label>
+                    <input type="text" id="name" name="name" placeholder="Ime"><br><br>
+                  <label for="username"></label>
+                    <input type="text" id="username" name="username" placeholder="Korisnicko ime"><br><br>
+                  <label for="name"></label>
+                    <input type="text" id="email" name="email" placeholder="E-mail"><br><br>
+                  <label for="name"></label>
+                    <input type="password" id="password" name="password" placeholder="Lozinka"><br><br>
+                  <input type="submit" value="Kreiraj racun" name="kreiraj_racun"><br><br>
+                </form>
+              </div>
+        </div>
+
+        <div class="col-md-4">
+            <a href='/home'><p>Nastavi kao gost </p></a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Memories</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, inicial-scale=1">
+		<meta name="author" content="Nikola Knežević">
+		<meta name="keywords" content="Zadar, Croatia, Holiday, Memories, Apartments, odmor, sveti, petar, na, moru, hrvatska, dalmacija, dalmatia">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+			integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">	
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">	
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+
+<body>
+  <div class="container - fluid">
+  
+    <div class="col-md-12">
+      <h1>Dobro dosli na web mjesto Memories apartmani - 
+      <br>
+      Sv. Petar na moru</h2>
+    </div>
+
+    <div class="col-md-3">
+			<div class="slide">
+				<img src = "{{url_for ('static', filename = 'images/slide_images/slide1.jpg')}}" width="100%" height="100%"/>
+			</div>	
+			<div class="slide">
+				<img src = "{{url_for ('static', filename = 'images/slide_images/slide2.jpg')}}" width="100%" height="100%"/>
+			</div>
+			<div class="slide">
+				<img src = "{{url_for ('static', filename = 'images/slide_images/slide3.jpg')}}" width="100%" height="100%"/>
+			</div>
+			<div class="slide">
+				<img src = "{{url_for ('static', filename = 'images/slide_images/slide4.jpg')}}" width="100%" height="100%"/>
+			</div>	
+			<div class="slide">
+				<img src = "{{url_for ('static', filename = 'images/slide_images/slide5.jpg')}}" width="100%" height="100%"/>
+			</div>
+			<div class="slide">
+				<img src = "{{url_for ('static', filename = 'images/slide_images/slide6.jpg')}}" width="100%" height="100%"/>
+			</div>
+			<div class="slide">
+        <img src = "{{url_for ('static', filename = 'images/slide_images/slide7.jpg')}}" width="100%" height="100%"/>
+			</div>	
+			<div class="slide">
+				<img src = "{{url_for ('static', filename = 'images/slide_images/slide8.jpg')}}" width="100%" height="100%"/>
+			</div>
+			<div class="slide">
+				<img src = "{{url_for ('static', filename = 'images/slide_images/slide9.jpg')}}" width="100%" height="100%"/>
+			</div>
+			<div class="slide">
+				<img src = "{{url_for ('static', filename = 'images/slide_images/slide10.jpg')}}" width="100%" height="100%"/>
+			</div>	
+    </div>
+    
+    <div class="col-md-3">
+
+      <h4>Vec si boravio kod nas? <br> Odlicno, unesi svoje podatke: </h4>
+          
+      <div class="col-md-4">
+        <div class="signup">
+          <form class="" action="" method="POST">
+            <label for="name"></label>
+              <input type="text" id="username_prijava" name="username_prijava" placeholder="korisnicko ime"><br><br>
+            <label for="username"></label>
+              <input type="password" id="password_prijava" name="password_prijava" placeholder="password"><br><br>
+            <input type="submit" value="Prijava" name="prijava">
+          </form>
+        </div>
+      </div>    
+    </div>
+        
+
+    <div class="col-md-3">
+      <h4>Nisi boravio kod nas? <br> Izradi novi racun: </h4>
+          
+      <div class="signup">
+        <form class="" action="" method="POST">
+          <label for="name"></label>
+            <input type="text" id="name" name="name" placeholder="Ime"><br><br>
+          <label for="username"></label>
+            <input type="text" id="username" name="username" placeholder="Korisnicko ime"><br><br>
+          <label for="name"></label>
+            <input type="email" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" id="email" name="email" placeholder="E-mail"><br>
+            <p>Ispravna forma za unos email adrese: imeprezime@email.com</p>
+          <label for="name"></label>
+            <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" id="password" name="password" placeholder="Lozinka">
+            <p>Lozinka mora sadrzavati barem jedno malo, jedno veliko slovo i jedan broj.<br>Najmanja duzina lozinke je 8 znakova</p>
+          <input type="submit" value="Kreiraj racun" name="kreiraj_racun"><br><br>
+        </form>
+      </div>
+      
+      <a href='/home'><p>Nastavi kao gost </p></a>
+      
+
+    </div>
+
+    <div class="col-md-3"> 
+      <div class="card">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Grad: {{ weather.name }}</li>
+          <li class="list-group-item">
+            <img src="http://openweathermap.org/img/wn/{{weather.weather[0].icon}}.png"> {{ weather.weather[0].description }} </li>
+          <li class="list-group-item">Datum: {{ datetime.fromtimestamp( weather.dt ).strftime('%d.%m.%Y.')}}</li>
+          <li class="list-group-item">Posljednje mjerenje: {{ datetime.fromtimestamp( weather.dt ).strftime('%H:%M')}}</li>
+          <li class="list-group-item">Temperatura: {{ weather.main.temp }} C</li>
+          <li class="list-group-item">Osjet: {{ weather.main.feels_like }} C</li>
+          <li class="list-group-item">Vlaznost zraka: {{ weather.main.humidity }} %</li>
+          <li class="list-group-item">Brzina vjetra: {{ weather.wind.speed }} km/h</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <footer>
+			<div class="col-sm-12">
+				<div class="footer-container">	
+					<div class="row">
+            <h1>Memories Apartments</h1>
+            <br>
+            <h2>Sveti Petar na moru</h2>
+            <br>
+            <h2>099 676 67 66 - memoriesapartments@gmail.com</h2>
+					</div>
+				</div>
+			</div>
+	</footer>
+
+  <script type="text/javascript" src="{{url_for('static', filename='js/slide.js')}}"></script>
+  <script type="text/javascript" src="{{url_for('static', filename='js/menures.js')}}"></script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<title>Memories</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, inicial-scale=1">
+		<meta name="author" content="Nikola Knežević">
+		<meta name="keywords" content="Zadar, Croatia, Holiday, Memories, Apartments, odmor, sveti, petar, na, moru, hrvatska, dalmacija, dalmatia">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+			integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">	
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+	</head>
+<body>
+		<div class="container - fluid">
+	
+			<nav class="navbar navbar-inverse">
+				<div class="container-fluid">
+					<div class="navbar-header">
+					<a class="navbar-brand" href="#">Memories Apartmani</a>
+					</div>
+    
+					<div class="topnav" id="myTopnav">
+						<a href="#" class="active"> Menu <span class="glyphicon glyphicon-chevron-right"></span></a>
+            			<a href='/home'><span class="glyphicon glyphicon-home"></span>  Pocetna</a>
+						<a href='/guestgallery'><span class="glyphicon glyphicon-picture"></span> Galerija</a>
+						<a href="https://www.booking.com/hotel/hr/memories-apartments.html?aid=318615;label=New_English_EN_HR_27034798465-KbhXF8k7R6bhUiQ1j4t8
+							YgS102131658985%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atiaud-297601666995%3Adsa-140566009465%3Alp1007616%3Ali%3Adec%3Adm;sid=343fa
+							c6b3245943bad3d875e08f258ad;frindrecv=1">
+							<span class="glyphicon glyphicon-check"></span> booking.com</a>
+						<a class="sf-icon-telephone e-btn e-link" href="tel:+385996766766"><span class="glyphicon glyphicon-earphone"></span> Nazovi</a>
+						<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+							<i class="fa fa-bars"></i>
+						</a>
+						<a href='/'><span class="glyphicon glyphicon-user"></span> Prijava</a>
+					</div>
+
+				</div>
+			</nav>
+
+            <p>Kontaktirajte nas</p>
+            <form action="{{url_for('send')}}"" method="POST">
+                <input type="email" name="email" placeholder="Unesite svoj email" required id="">
+                <br>
+                <br>
+                <input type="text" name="subject" placeholder="Subject" required id="">
+                <br>
+                <br>
+                <input type="submit" value="Zapocni e-mail rezervaciju">
+            </form>
+		</div>    
+        
+        <script type="text/javascript" src="{{url_for('static', filename='js/menures.js')}}"></script>
+        <script type="text/javascript" src="{{url_for('static', filename='js/slide.js')}}"></script>
+  </body>
+</html>
